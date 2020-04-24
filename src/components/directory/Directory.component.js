@@ -50,9 +50,11 @@ export default class Directory extends Component {
         {sections.map((section) => (
           <MenuItem
             key={section.id}
+            // {...otherSectionProps}
             title={section.title}
             imageUrl={section.imageUrl}
             size={section.size}
+            linkUrl={section.linkUrl}
           />
         ))}
       </div>
