@@ -1,13 +1,15 @@
 import React from 'react';
+import CollectionItem from '../Collection-Item/CollectionItem.component';
 
-// import './CollectionPreview.styles';
 import './CollectionPreview.styles.scss';
 
 const CollectionPreview = (props) => {
   const { title, items } = props;
   const itemsList = items
     .filter((item, idx) => idx < 4)
-    .map((item) => <div key={item.id}>{item.name}</div>);
+    .map(({ id, ...otherItemProps }) => (
+      <CollectionItem key={id} {...otherItemProps} />
+    ));
   return (
     <div className="collection-preview">
       <h1 className="title">{title.toUpperCase()}</h1>
