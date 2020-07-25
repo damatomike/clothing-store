@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import memoize from 'lodash.memoize';
 
 const selectShop = (state) => state.shop;
 
@@ -26,5 +25,5 @@ export const selectIsCollectionFetching = createSelector(
 
 export const selectIsCollectionsLoaded = createSelector(
   [selectShop],
-  (shop) => shop.collections
+  (shop) => !!shop.collections
 );

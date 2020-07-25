@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MenuItem from '../menu-item/MenuItem.component.js';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -12,7 +12,6 @@ const Directory = ({ sections }) => {
       {sections.map((section) => (
         <MenuItem
           key={section.id}
-          // {...otherSectionProps}
           title={section.title}
           imageUrl={section.imageUrl}
           size={section.size}

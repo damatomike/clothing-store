@@ -6,18 +6,10 @@ import ShopPage from './components/pages/shop/ShopPage.component';
 import Checkout from './components/pages/checkout/Checkout';
 import Header from './components/Header/Header.component';
 import SignInAndRegister from './components/SignInRegister/SignInRegister';
-import {
-  auth,
-  createUserProfileDocument,
-  addCollectionAndDocuments,
-} from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user-reducer';
 import { selectCurrentUser } from './redux/user/user-selectors';
 import { createStructuredSelector } from 'reselect';
-import {
-  selector,
-  selectCollectionsForPreview,
-} from './redux/shop/shop-selector';
 
 import './App.css';
 
