@@ -4,6 +4,7 @@ const TOGGLE_CART_HIDDEN = 'TOGGLE_CART_HIDDEN';
 const ADD_ITEM = 'ADD_ITEM';
 const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART';
 const REMOVE_ITEM = 'REMOVE_ITEM';
+export const CLEAR_CART = 'CLEAR_CART';
 
 export const toggleCartHidden = () => ({
   type: TOGGLE_CART_HIDDEN,
@@ -22,6 +23,10 @@ export const clearItemFromCart = (item) => ({
 export const removeItem = (item) => ({
   type: REMOVE_ITEM,
   payload: item,
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART,
 });
 
 const initialState = { hidden: true, cartItems: [] };
@@ -47,6 +52,8 @@ const cartReducer = (state = initialState, action) => {
           (cartItem) => cartItem.id !== action.payload.id
         ),
       };
+    case CLEAR_CART:
+      return { ...state, cartItems: [] };
     default:
       return state;
   }
