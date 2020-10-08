@@ -1,9 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
+import Spinner from '../../Spinner/Spinner.component';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchCollectionsStart } from '../../../redux/shop/shop-reducer';
-import CollectionsOverviewContainer from '../../CollectionsOverview/CollectionsOverview.container';
-import CollectionPageContainer from '../Collection/CollectionPage.container';
+
+const CollectionsOverviewContainer = lazy(() =>
+  import('../../CollectionsOverview/CollectionsOverview.container')
+);
+
+const CollectionPageContainer = lazy(() =>
+  import('../Collection/CollectionPage.container')
+);
 
 const ShopPage = ({ match, fetchCollectionsStart }) => {
   useEffect(() => {
@@ -12,15 +19,17 @@ const ShopPage = ({ match, fetchCollectionsStart }) => {
 
   return (
     <div className="shop-page">
-      <Route
-        exact
-        path={`${match.path}`}
-        component={CollectionsOverviewContainer}
-      />
-      <Route
-        path={`${match.path}/:collectionId`}
-        component={CollectionPageContainer}
-      />
+      <Suspense fallback={<Spinner />}>
+        <Route
+          exact
+          path={`${match.path}`}
+          component={CollectionsOverviewContainer}
+        />
+        <Route
+          path={`${match.path}/:collectionId`}
+          component={CollectionPageContainer}
+        />
+      </Suspense>
     </div>
   );
 };
