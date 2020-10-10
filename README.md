@@ -6,7 +6,7 @@
 
 ### Tech Stack
 
-- React and React Hooks
+- React (using React Hooks)
 - Redux
 - Redux Persist
 - Redux Sagas
