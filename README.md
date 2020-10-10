@@ -6,13 +6,16 @@
 
 ### Tech Stack
 
-- React
+- React and React Hooks
 - Redux
 - Redux Persist
+- Redux Sagas
 - Reselect
 - Firebase/Authentification
 - Firestore
+- Express
 - Sass
+- Styled Components
 - Stripe API
 
 ### Local Setup
