@@ -11,6 +11,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 const port = process.env.PORT || 5000;
+//const nodeEnv = process.env.NODE_ENV || 'production';
 
 app.use(compression());
 app.use(bodyParser.json());

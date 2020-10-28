@@ -10,9 +10,9 @@ import {
 import StripeCheckoutButton from '../../StripeButton/StripeButton';
 
 const Checkout = ({ cartItems, total }) => {
-  console.log('CART', cartItems);
   return (
     <div className="checkout-page">
+      <h1>Test deploy</h1>
       <div className="checkout-header">
         <div className="header-block">
           <span>Product</span>
