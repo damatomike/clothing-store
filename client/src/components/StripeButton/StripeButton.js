@@ -1,10 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { emptyCart } from '../../redux/cart/cart-reducer';
+import { checkoutSuccess } from '../../redux/cart/cart-reducer';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import { onCheckOutSuccess } from '../../redux/cart/cart-saga';
 
 const StripeButton = ({ price, history }) => {
   const priceForStripe = price * 100;
@@ -22,7 +21,7 @@ const StripeButton = ({ price, history }) => {
       });
       alert('Payment successful!');
       history.push('/thankyou');
-      onCheckOutSuccess();
+      checkoutSuccess();
     } catch (error) {
       console.error('Payment error: ', error);
       alert('There was an issue with your payment.');
@@ -45,8 +44,8 @@ const StripeButton = ({ price, history }) => {
   );
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   clearCart: () => dispatch(emptyCart()),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  checkoutSuccess: () => dispatch(checkoutSuccess()),
+});
 
-export default withRouter(StripeButton);
+export default withRouter(connect(null, mapDispatchToProps)(StripeButton));
