@@ -20,7 +20,6 @@ const StripeButton = ({ price, history, cartItems }) => {
         },
       });
       alert('Payment successful!');
-      emptyCart();
       history.push('/thankyou');
     } catch (error) {
       console.error('Payment error: ', error);
