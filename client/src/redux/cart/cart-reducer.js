@@ -5,6 +5,7 @@ const ADD_ITEM = 'ADD_ITEM';
 const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART';
 const REMOVE_ITEM = 'REMOVE_ITEM';
 export const CLEAR_CART = 'CLEAR_CART';
+const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS';
 
 export const toggleCartHidden = () => ({
   type: TOGGLE_CART_HIDDEN,
@@ -29,10 +30,9 @@ export const clearCart = () => ({
   type: CLEAR_CART,
 });
 
-export const emptyCart = () => async (dispatch) => {
-  console.log('CLEAR ME!!');
-  dispatch(clearCart());
-};
+export const checkoutSuccess = () => ({
+  type: CHECKOUT_SUCCESS,
+});
 
 const initialState = { hidden: true, cartItems: [] };
 
