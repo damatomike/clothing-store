@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { emptyCart } from '../../redux/cart/cart-reducer';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import { onCheckOutSuccess } from '../../redux/cart/cart-saga';
 
 const StripeButton = ({ price, history }) => {
   const priceForStripe = price * 100;
@@ -21,8 +22,8 @@ const StripeButton = ({ price, history }) => {
       });
       alert('Payment successful!');
       history.push('/thankyou');
+      onCheckOutSuccess();
     } catch (error) {
-      console.error('MESSAGE', error.message);
       console.error('Payment error: ', error);
       alert('There was an issue with your payment.');
     }

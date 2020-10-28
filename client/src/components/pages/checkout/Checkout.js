@@ -12,7 +12,6 @@ import StripeCheckoutButton from '../../StripeButton/StripeButton';
 const Checkout = ({ cartItems, total }) => {
   return (
     <div className="checkout-page">
-      <h1>Test deploy</h1>
       <div className="checkout-header">
         <div className="header-block">
           <span>Product</span>
