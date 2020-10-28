@@ -5,7 +5,7 @@ const ADD_ITEM = 'ADD_ITEM';
 const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART';
 const REMOVE_ITEM = 'REMOVE_ITEM';
 export const CLEAR_CART = 'CLEAR_CART';
-const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS';
+export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS';
 
 export const toggleCartHidden = () => ({
   type: TOGGLE_CART_HIDDEN,
@@ -58,6 +58,7 @@ const cartReducer = (state = initialState, action) => {
         ),
       };
     case CLEAR_CART:
+    case CHECKOUT_SUCCESS:
       return { ...state, cartItems: [] };
     default:
       return state;

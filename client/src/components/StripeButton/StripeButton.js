@@ -45,8 +45,8 @@ const StripeButton = ({ price, history }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  clearCart: () => dispatch(emptyCart()),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   clearCart: () => dispatch(emptyCart()),
+// });
 
-export default withRouter(connect(null, mapDispatchToProps)(StripeButton));
+export default withRouter(StripeButton);
