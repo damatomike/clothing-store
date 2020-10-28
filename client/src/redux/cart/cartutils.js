@@ -29,3 +29,8 @@ export const removeItemFromCart = (cartItems, itemToRemove) => {
       : cartItem
   );
 };
+
+// export const clearCart = (cartItems) => {
+//   console.log('CLEAR MY CART', cartItems);
+//   return [];
+// };

@@ -29,6 +29,11 @@ export const clearCart = () => ({
   type: CLEAR_CART,
 });
 
+export const emptyCart = () => async (dispatch) => {
+  console.log('CLEAR ME!!');
+  dispatch(clearCart());
+};
+
 const initialState = { hidden: true, cartItems: [] };
 
 const cartReducer = (state = initialState, action) => {

@@ -10,6 +10,7 @@ import {
 import StripeCheckoutButton from '../../StripeButton/StripeButton';
 
 const Checkout = ({ cartItems, total }) => {
+  console.log('CART', cartItems);
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -44,7 +45,7 @@ const Checkout = ({ cartItems, total }) => {
         <br />
         4242 4242 4242 4242 - Exp: 01/21 CVV: 123
       </div>
-      <StripeCheckoutButton price={total} />
+      <StripeCheckoutButton price={total} cartItems={cartItems} />
     </div>
   );
 };
