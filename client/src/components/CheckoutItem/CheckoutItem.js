@@ -9,6 +9,7 @@ import './CheckoutItem.styles.scss';
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
+  const finalPrice = price * quantity;
   return (
     <div className="checkout-item">
       <div className="image-container">
@@ -24,7 +25,7 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
           &#10095;
         </div>
       </span>
-      <span className="price">${price}</span>
+      <span className="price">${finalPrice}</span>
       <div className="remove-button" onClick={() => clearItem(cartItem)}>
         &#10005;
       </div>

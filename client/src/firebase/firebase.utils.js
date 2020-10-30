@@ -46,7 +46,6 @@ export const addCollectionAndDocuments = async (
   objectsToAdd
 ) => {
   const collectionRef = firestore.collection(collectionKey);
-  console.log('Colleciton Ref', collectionRef);
 
   const batch = firestore.batch();
   objectsToAdd.forEach((object) => {

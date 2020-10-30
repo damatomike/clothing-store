@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ThankYouContainer } from './ThankYou.styles.js';
 
-const Homepage = () => {
+const ThankYou = () => {
   return (
     <ThankYouContainer>
       <h2>Thank you for shopping with us</h2>
@@ -13,4 +13,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default ThankYou;
